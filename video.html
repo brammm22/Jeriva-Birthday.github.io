@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jevira's Birthday</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer; /* Menunjukkan bahwa video bisa diklik */
+        }
+        /* Menghilangkan semua kontrol default */
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+        video::-webkit-media-controls-enclosure {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <video id="myVideo">
+        <source src="image/Netflix New Logo Animation 2019.mp4" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+    </video>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        video.volume = 1.0;
+        
+        // Toggle play/pause saat video diklik
+        video.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+        
+        // Redirect setelah video selesai
+        video.addEventListener('ended', function() {
+            window.location.href = 'Netflix2.html';
+        });
+    </script>
+</body>
+</html>
